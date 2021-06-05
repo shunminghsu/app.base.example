@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gifview_margin">10dp</dimen>
+    <dimen name="scene_padding_b">10dp</dimen>
+    <dimen name="gifview_height">180dp</dimen>
+    <dimen name="gifview_width">320dp</dimen>
+    <dimen name="setting_item_height_border">260dp</dimen>
+    <dimen name="setting_item_height">250dp</dimen>
+    <dimen name="setting_item_bar_width">50dp</dimen>
+    <dimen name="home_item_height">60dp</dimen>
+    <dimen name="home_item_image_width">100dp</dimen>
+
+    <dimen name="home_title_size">25sp</dimen>
+    <dimen name="home_item_title_size">22sp</dimen>
+    <dimen name="btn_text_size">15sp</dimen>
+    <dimen name="setting_bar_text_size">15sp</dimen>
+    <dimen name="setting_bottom_text_size">15sp</dimen>
+    <dimen name="ver_text_size">12sp</dimen>
+</resources>

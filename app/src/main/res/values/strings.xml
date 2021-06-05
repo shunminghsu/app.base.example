@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">The Story</string>
+    <string name="hide_info">Hide info</string>
+    <string name="app_version">ver.201510220</string>
+    <string name="app_start">Start</string>
+    <string name="app_back">Back</string>
+    <string name="loading">"Loading file..."</string>
+    <string name="app_author">ShunMing</string>
+    <string name="select_gif">Set gif</string>
+    <string name="load_gif">Load</string>
+    <string name="setting_save">Save</string>
+    <string name="setting_reset">Reset</string>
+    <string name="settings_title">Settings</string>
+    <string name="scene1_title">Scene1</string>
+    <string name="scene2_title">Scene2</string>
+    <string name="scene3_title">Scene3</string>
+    <string name="scene4_title">Scene4</string>
+    <string name="scene5_title">Scene5</string>
+    <string name="scene6_title">Scene6</string>
+    <string name="scene7_title">Scene7</string>
+    <string name="scene8_title">Scene8</string>
+    <string name="scene9_title">Scene9</string>
+    <string name="touch_to_play">Turn off Animation</string>
+    <string name="repeat_text">Repeat times:</string>
+    <string name="random_play">Random play</string>
+
+
+    <string name="first">First</string>
+    <string name="last">Last</string>
+    <string name="next">Next</string>
+    <string name="random">Random Mode</string>
+    <string name="auto_play">Auto Mode</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

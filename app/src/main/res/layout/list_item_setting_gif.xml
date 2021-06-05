@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="gif"
+            type="com.example.liveapp2021.Gif"/>
+        <variable
+            name="clickListener"
+            type="com.example.liveapp2021.setting.SettingGifListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_item_height_border"
+        android:background="#FF000000"
+        android:paddingHorizontal="10dp"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF000000"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/gif_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/setting_bottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--        android:onClick="@{() -> clickListener.onClick(gif)}"-->
+        <LinearLayout
+            android:id="@+id/setting_bar"
+            android:layout_width="@dimen/setting_item_bar_width"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="#660078D7"
+            android:visibility="@{gif.selected? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/setting_bottom">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <ImageButton
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:src="@drawable/outline_cancel_white_36"
+                android:textSize="@dimen/setting_bar_text_size" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/setting_bar_text_size"
+                android:layout_weight="1"
+                app:setGifId="@{gif}"/>
+
+            <ImageButton
+                android:id="@+id/done_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:src="@drawable/outline_done_white_36"
+                android:textSize="@dimen/setting_bar_text_size" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="@dimen/setting_bar_text_size"
+                android:layout_weight="1"
+                app:setGifName="@{gif}"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/setting_bottom"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/setting_item_bar_width"
+            android:background="#000000"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp" />
+
+            <ImageButton
+                android:id="@+id/image_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:src="@drawable/outline_image_white_24"
+                android:textSize="@dimen/setting_bar_text_size"
+                android:visibility="@{gif.selected? View.VISIBLE : View.INVISIBLE}" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/text_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:src="@drawable/outline_chat_white_24"
+                android:textSize="@dimen/setting_bar_text_size"
+                android:visibility="@{gif.selected? View.VISIBLE : View.INVISIBLE}" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/more_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:src="@drawable/outline_more_horiz_white_24"
+                android:textSize="@dimen/setting_bar_text_size"
+                android:visibility="@{gif.selected? View.VISIBLE : View.INVISIBLE}" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:src="@drawable/outline_cancel_white_24"
+                android:textSize="@dimen/setting_bar_text_size"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

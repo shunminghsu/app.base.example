@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="playViewModel"
+            type="com.example.liveapp2021.play.PlayViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".play.PlayFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/checkbox_layout">
+
+            <ImageView
+                android:id="@+id/gif_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/checkbox_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FF0078D7"
+            app:layout_constraintBottom_toTopOf="@+id/footer">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> playViewModel.onAutoChecked()}"
+                android:textSize="15sp"
+                android:text="@string/auto_play" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> playViewModel.onRandomChecked()}"
+                android:textSize="15sp"
+                android:text="@string/random" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FF0078D7"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="@{() -> playViewModel.onFirst()}"
+                android:textSize="@dimen/btn_text_size"
+                android:text="@string/first"/>
+            <View
+                android:layout_height="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="@{() -> playViewModel.onNext()}"
+                android:textSize="@dimen/btn_text_size"
+                android:text="@string/next"/>
+            <View
+                android:layout_height="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:onClick="@{() -> playViewModel.onLast()}"
+                android:textSize="@dimen/btn_text_size"
+                android:text="@string/last"/>
+            <View
+                android:layout_height="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> playViewModel.onClose()}"
+                android:textSize="@dimen/btn_text_size"
+                android:text="@string/app_back" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="story"
+            type="com.example.liveapp2021.Story"/>
+        <variable
+            name="clickListener"
+            type="com.example.liveapp2021.home.HomeStoryListener" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:paddingBottom="10dp"
+        android:onClick="@{() -> clickListener.onClick(story)}">
+
+        <ImageView
+            android:id="@+id/story_image"
+            android:layout_width="@dimen/home_item_image_width"
+            android:layout_height="@dimen/home_item_height"
+            android:background="#FF000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:textSize="@dimen/home_item_title_size"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:text="@{story.myDescription}"
+            android:maxLines="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/story_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
